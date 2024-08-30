@@ -1,6 +1,8 @@
 #include "rules/rules_interface.h"
 
 #include <cassert>
+#include <cstdlib>
+
 
 RulesInterface::RulesInterface(uint16_t rows, uint16_t cols): _rows(rows), _cols(cols) {}
 
