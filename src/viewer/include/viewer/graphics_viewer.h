@@ -7,6 +7,13 @@
 
 namespace viewer {
 
+enum class ViewerState {
+    STARTING,
+    EDITING,
+    RUNNING,
+    PAUSED
+};
+
 class GraphicsViewer : public Viewer {
 public:
     GraphicsViewer(uint8_t pixels_per_cell, RulesInterface& rules);
@@ -16,7 +23,10 @@ public:
     virtual void run() override;
 
 private:
+    void display_menu();
+
     uint8_t _pixels_per_cell;
+    ViewerState _state = ViewerState::STARTING;
 };
 
 }
