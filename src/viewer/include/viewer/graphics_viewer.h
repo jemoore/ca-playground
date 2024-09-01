@@ -11,7 +11,8 @@ enum class ViewerState {
     STARTING,
     EDITING,
     RUNNING,
-    PAUSED
+    PAUSED,
+    STOP
 };
 
 class GraphicsViewer : public Viewer {

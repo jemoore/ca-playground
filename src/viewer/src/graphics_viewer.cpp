@@ -30,7 +30,7 @@ void GraphicsViewer::display_menu() {
 void GraphicsViewer::run() {
     InitWindow(_pixels_per_cell * _rules.number_of_cols(), _pixels_per_cell * _rules.number_of_rows(), "Conway's Game of Life");
 
-    while (!WindowShouldClose())
+    while (!WindowShouldClose() && _state != ViewerState::STOP)
     {
         BeginDrawing();
           // listen for keyboard events and change state if needed
@@ -45,7 +45,7 @@ void GraphicsViewer::run() {
               _state = ViewerState::PAUSED;
             }
           } else if(IsKeyReleased(KEY_Q) || IsKeyReleased(KEY_ESCAPE)) {
-            CloseWindow();
+            _state = ViewerState::STOP;
           }
 
           switch(_state) {
