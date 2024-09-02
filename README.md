@@ -1,9 +1,9 @@
 # Cellular Automata Playground
 
 Simple implementation of Conway's Game of Life.
-Can be ran from the therminal with:
+Can be ran from the terminal with:
 ```
-ca-playgrout t
+ca-playground t
 ```
 or with a graphical window:
 ```
