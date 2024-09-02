@@ -28,6 +28,7 @@ namespace viewer
     private:
         void display_menu();
         void edit();
+        void update_state();
 
         uint8_t _pixels_per_cell;
         ViewerState _state = ViewerState::STARTING;

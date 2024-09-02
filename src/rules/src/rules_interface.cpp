@@ -2,7 +2,7 @@
 
 #include <cassert>
 #include <cstdlib>
-
+#include <time.h>
 
 RulesInterface::RulesInterface(uint16_t rows, uint16_t cols): _rows(rows), _cols(cols) {}
 
@@ -16,6 +16,7 @@ uint16_t RulesInterface::number_of_cols() const {
 }
 
 void RulesInterface::randomize() {
+  srand(time(nullptr));
   for(uint16_t row = 0; row < _rows; ++row) {
     for(uint16_t col = 0; col < _cols; ++col) {
       set_alive(row, col, rand() % 2 == 0);

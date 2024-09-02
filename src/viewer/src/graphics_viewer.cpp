@@ -44,13 +44,11 @@ void GraphicsViewer::edit()
   }
 }
 
-void GraphicsViewer::run()
+/*
+ * Update state of the simulation based on keyboard events.
+*/
+void GraphicsViewer::update_state()
 {
-  InitWindow(_pixels_per_cell * _rules.number_of_cols(), _pixels_per_cell * _rules.number_of_rows(), "Conway's Game of Life");
-
-  while (!WindowShouldClose() && _state != ViewerState::STOP)
-  {
-    BeginDrawing();
     // listen for keyboard events and change state if needed
     if (IsKeyReleased(KEY_E))
     {
@@ -78,6 +76,17 @@ void GraphicsViewer::run()
     {
       _state = ViewerState::STOP;
     }
+}
+
+void GraphicsViewer::run()
+{
+  InitWindow(_pixels_per_cell * _rules.number_of_cols(), _pixels_per_cell * _rules.number_of_rows(), "Conway's Game of Life");
+
+  while (!WindowShouldClose() && _state != ViewerState::STOP)
+  {
+    BeginDrawing();
+
+    update_state();
 
     switch (_state)
     {
