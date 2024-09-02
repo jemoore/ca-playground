@@ -4,10 +4,12 @@
 #include "viewer/viewer.h"
 #include <rules/rules_interface.h>
 
-namespace viewer {
-    class TerminalViewer : public Viewer {
+namespace viewer
+{
+    class TerminalViewer : public Viewer
+    {
     public:
-        TerminalViewer(RulesInterface& rules);
+        TerminalViewer(RulesInterface &rules);
         virtual ~TerminalViewer() = default;
 
         virtual void update() const override;

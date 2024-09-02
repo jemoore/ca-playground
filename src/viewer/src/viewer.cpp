@@ -2,6 +2,6 @@
 
 using namespace viewer;
 
-Viewer::Viewer(RulesInterface& rules) :
-_rules(rules)
-{}
+Viewer::Viewer(RulesInterface &rules) : _rules(rules)
+{
+}
